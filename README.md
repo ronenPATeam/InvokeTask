@@ -7,6 +7,10 @@ Libary that provides the option to invoke task with business data in Automation 
 ##### Description:
 Invokes a new robotic task in the RTServer.
 
+#### Usage:
+1. Set the OpenAM username and password by using the function **Set OpenAM Credentials**
+2. Use Invoke function
+
 #### Expected parameters:
 - Invoke Solution ID – the dproj id. (dproj_xxxxxxxxxxxx).
 - Workflow ID – the id the of workflow. ($Project.workflowItem_xxxxxxxx).
