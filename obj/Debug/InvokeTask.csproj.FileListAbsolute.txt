@@ -1,0 +1,41 @@
+C:\Users\ronen\source\repos\InvokeTask\obj\Debug\InvokeTask.csproj.CoreCompileInputs.cache
+C:\Users\ronen\source\repos\InvokeTask\bin\Debug\Direct.Interface.dll
+C:\Users\ronen\source\repos\InvokeTask\bin\Debug\Direct.Shared.dll
+C:\Users\ronen\source\repos\InvokeTask\bin\Debug\Direct.Shared.Library.dll
+C:\Users\ronen\source\repos\InvokeTask\bin\Debug\log4net.dll
+C:\Users\ronen\source\repos\InvokeTask\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ronen\source\repos\InvokeTask\bin\Debug\Microsoft.mshtml.dll
+C:\Users\ronen\source\repos\InvokeTask\obj\Debug\InvokeTask.csproj.CopyComplete
+C:\Users\ronen\source\repos\InvokeTask\bin\Debug\ASImportedServices.InvokeTask.dll
+C:\Users\ronen\source\repos\InvokeTask\bin\Debug\ASImportedServices.InvokeTask.pdb
+C:\Users\ronen\source\repos\InvokeTask\obj\Debug\ASImportedServices.InvokeTask.dll
+C:\Users\ronen\source\repos\InvokeTask\obj\Debug\ASImportedServices.InvokeTask.pdb
+C:\Users\ronen\source\repos\InvokeTask\obj\Debug\InvokeTask.csprojAssemblyReference.cache
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\bin\Debug\ASImportedServices.InvokeTask.dll
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\bin\Debug\ASImportedServices.InvokeTask.pdb
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\bin\Debug\Direct.Interface.dll
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\bin\Debug\Direct.Shared.dll
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\bin\Debug\Direct.Shared.Library.dll
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\bin\Debug\log4net.dll
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\obj\Debug\InvokeTask.csproj.AssemblyReference.cache
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\obj\Debug\InvokeTask.csproj.CoreCompileInputs.cache
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\obj\Debug\InvokeTask.csproj.CopyComplete
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\obj\Debug\ASImportedServices.InvokeTask.dll
+C:\Users\Mateusz\Downloads\InvokeTask\InvokeTask\obj\Debug\ASImportedServices.InvokeTask.pdb
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\obj\Debug\InvokeTask.csproj.AssemblyReference.cache
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\obj\Debug\InvokeTask.csproj.CoreCompileInputs.cache
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\obj\Debug\ASImportedServices.InvokeTask.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\obj\Debug\ASImportedServices.InvokeTask.pdb
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\ASImportedServices.InvokeTask.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\ASImportedServices.InvokeTask.pdb
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\Direct.Shared.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\Direct.Shared.Library.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\log4net.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\Direct.Interface.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\Direct.WebServiceProxy.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\RESTSender.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\Microsoft.Web.Services2.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\obj\Debug\InvokeTask.csproj.CopyComplete
