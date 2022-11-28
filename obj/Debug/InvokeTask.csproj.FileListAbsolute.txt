@@ -39,3 +39,5 @@ C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin
 C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\RESTSender.dll
 C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\Microsoft.Web.Services2.dll
 C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\obj\Debug\InvokeTask.csproj.CopyComplete
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\Connectivity.Shared.dll
+C:\Users\Mateusz\OneDrive - PA Team Software Consulting Ltd\Repos\InvokeTask\bin\Debug\Direct.Framework.dll

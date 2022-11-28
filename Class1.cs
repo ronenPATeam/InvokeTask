@@ -32,7 +32,7 @@ namespace InvokeTask.Dll
         [DirectDom("Invoke")]
         [DirectDomMethod("Invoke Solution ID {solutionId}, Workflow ID {workflowId}, Priority {priority}, Input Data {inputData}, Business Data {businessData}")]
         [MethodDescriptionAttribute("Creates a task with the information given in the type")]
-        public static string invokeTask(string solutionID, string wfID, int priority,string data,string businessData)
+        public static string invokeTask(string solutionID, string wfID, int priority, string data, string businessData)
         {
             if (logArchitect.IsDebugEnabled)
             {
@@ -42,9 +42,9 @@ namespace InvokeTask.Dll
             {
                 if (logArchitect.IsDebugEnabled)
                 {
-                    logArchitect.DebugFormat("InvokeTask.Invoke - Running");                    
+                    logArchitect.DebugFormat("InvokeTask.Invoke - Running");
                 }
-                return InnerInvokeTask(solutionID, wfID, priority, data, ConvertStringToList(businessData));
+                return InnerInvokeTask(solutionID, wfID, priority, ConvertStringToList(data), ConvertStringToList(businessData));
 
             }
             catch (Exception ex)
@@ -60,11 +60,17 @@ namespace InvokeTask.Dll
         }
         private static List<string> ConvertStringToList(string text)
         {
-            List<string> parsedBusinessDataList = new List<string>();
-            parsedBusinessDataList = text.Split('|').ToList();
-            return parsedBusinessDataList;
+            List<string> parsedDataList = new List<string>();
+
+            if (string.IsNullOrEmpty(text))
+            {
+                return parsedDataList;
+            }
+
+            parsedDataList = text.Split('|').ToList();
+            return parsedDataList;
         }
-        private static string InnerInvokeTask(string solutionID, string wfID, int priority, string data, List<string> businessData)
+        private static string InnerInvokeTask(string solutionID, string wfID, int priority, List<string> data, List<string> businessData)
         {
             string URL;
             try
@@ -89,7 +95,11 @@ namespace InvokeTask.Dll
             requestMetaData.businessData = businessData;
 
             WorkflowData workflowData = new WorkflowData();
-            workflowData.arguments.Add(new Argument("String", data));
+
+            foreach (string input in data)
+            {
+                workflowData.arguments.Add(new Argument("String", input));
+            }
 
             WorkflowMetaData workflowMetaData = new WorkflowMetaData();
 
@@ -116,11 +126,11 @@ namespace InvokeTask.Dll
 
             try
             {
-                if (TaskInvoker.logArchitect.IsDebugEnabled)
+                if (logArchitect.IsDebugEnabled)
                 {
-                    TaskInvoker.logArchitect.Info("Trying to create a task for SolutionID: \"" + solutionID + "\" on workflow: \"" + wfID +
+                    logArchitect.Info("Trying to create a task for SolutionID: \"" + solutionID + "\" on workflow: \"" + wfID +
                         "\" with input: " + data);
-                    TaskInvoker.logArchitect.Info("Request data was:\n" + JsonConvert.SerializeObject(bodyRoot, Formatting.Indented).Replace("\"{", "{").Replace("}\"", "}").Replace(@"\", ""));
+                    logArchitect.Info("Request data was:\n" + JsonConvert.SerializeObject(bodyRoot, Formatting.Indented).Replace("\"{", "{").Replace("}\"", "}").Replace(@"\", ""));
                 }
                 WebResponse webResponse = request.GetResponse();
                 using (Stream webStream = webResponse.GetResponseStream() ?? Stream.Null)
@@ -128,16 +138,16 @@ namespace InvokeTask.Dll
                 {
                     string response = responseReader.ReadToEnd();
                     AnswerRoot answer = JsonConvert.DeserializeObject<AnswerRoot>(response);
-                    if (TaskInvoker.logArchitect.IsDebugEnabled)
-                        TaskInvoker.logArchitect.Debug("InvokeTask task ID: " + answer.requestId);
+                    if (logArchitect.IsDebugEnabled)
+                        logArchitect.Debug("InvokeTask task ID: " + answer.requestId);
                     //return answer.message;
                     return "Success " + answer.requestId;
                 }
             }
             catch (Exception e)
             {
-                if (TaskInvoker.logArchitect.IsErrorEnabled)
-                    TaskInvoker.logArchitect.Error("Failed to create a task for SolutionID:\n" + solutionID + "\" on workflow:\n" + workflowMetaData.workflowId +
+                if (logArchitect.IsErrorEnabled)
+                    logArchitect.Error("Failed to create a task for SolutionID:\n" + solutionID + "\" on workflow:\n" + workflowMetaData.workflowId +
                         "\" with input:\n" + data + ".\nReason: " + e.Message);
             }
             return "Failed to invoke, check logs for more information";
@@ -257,7 +267,7 @@ namespace InvokeTask.Dll
                 using (StreamReader responseReader = new StreamReader(webStream))
                 {
                     string response = responseReader.ReadToEnd();
-                    returnedTokenData obj = JsonConvert.DeserializeObject<returnedTokenData>(response);  
+                    returnedTokenData obj = JsonConvert.DeserializeObject<returnedTokenData>(response);
 
                     return obj.tokenId;
                 }
@@ -298,5 +308,5 @@ namespace InvokeTask.Dll
             public string tokenId { get; set; }
             public string successUrl { get; set; }
         }
-    }  
+    }
 }
