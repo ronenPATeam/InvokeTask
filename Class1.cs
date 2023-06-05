@@ -18,6 +18,7 @@ namespace InvokeTask.Dll
         private static readonly ILog logArchitect = LogManager.GetLogger(Loggers.LibraryObjects);
         internal static string _openAMUser;
         internal static string _openAMPassword;
+        internal static string _serverFQDN;
 
         [DirectDom("Set OpenAM Credentials")]
         [DirectDomMethod("Set OpenAM Credentials {username} {password}")]
@@ -26,6 +27,15 @@ namespace InvokeTask.Dll
         {
             _openAMUser = username;
             _openAMPassword = password;
+
+        }
+
+        [DirectDom("Set Server FQDN")]
+        [DirectDomMethod("Set Server FQDN {serverFQDN}")]
+        [MethodDescriptionAttribute("Sets server's FQDN for invoke task operations")]
+        public static void setServerFQDN(string serverFQDN)
+        {
+            _serverFQDN = serverFQDN;
 
         }
 
@@ -73,14 +83,7 @@ namespace InvokeTask.Dll
         private static string InnerInvokeTask(string solutionID, string wfID, int priority, List<string> data, List<string> businessData)
         {
             string URL;
-            try
-            {
-                URL = NiceRestHelpers.fetchFQDNfromConfig() + @"/RTServer/rest/nice/rti/ra/invocations/";
-            }
-            catch
-            {
-                URL = ConfigurationManager.AppSettings["FQDN"] + @"/RTServer/rest/nice/rti/ra/invocations/";
-            }
+            URL = @"https://" + TaskInvoker._serverFQDN + @":1912/RTServer/rest/nice/rti/ra/invocations/";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
             request.Method = "POST";
             request.ContentType = "application/json";
@@ -241,15 +244,7 @@ namespace InvokeTask.Dll
         public static string getToken()
         {
             string URL;
-            try
-            {
-                URL = NiceRestHelpers.fetchFQDNfromConfig() + @"/openam/json/authenticate";
-            }
-            catch
-            {
-                URL = ConfigurationManager.AppSettings["FQDN"] + @"/openam/json/authenticate";
-            }
-
+            URL = @"https://" + TaskInvoker._serverFQDN + @":1912/openam/json/authenticate";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
             request.Method = "POST";
             request.Accept = "application/json";
